@@ -109,13 +109,13 @@ func main() {
 	cur.Close(context.TODO())
 	fmt.Printf("Found multiple documents (array of pointers): %+v\n", results)
 
-	// Deletion
-	filterDel := bson.M{}
-	deleteResult, err := collection.DeleteMany(context.TODO(), filterDel)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Printf("Deleted %v documents in the profs collection\n", deleteResult.DeletedCount)
+	//// Deletion
+	//filterDel := bson.M{}
+	//deleteResult, err := collection.DeleteMany(context.TODO(), filterDel)
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+	//fmt.Printf("Deleted %v documents in the profs collection\n", deleteResult.DeletedCount)
 
 	// Disconnect
 	err = client.Disconnect(context.TODO())
