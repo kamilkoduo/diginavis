@@ -1,0 +1,23 @@
+#docker compose file
+version: '3.1'
+
+networks:
+  project:
+
+services:
+  mongo:
+    image: mongo:4.2.0-bionic
+    container_name: "mongo"
+    command: mongod
+    environment:
+      - MONGO_DATA_DIR=/mongo/data
+      - MONGO_LOG_DIR=/mongo/logs
+      - MONGODB_USER="user"
+      - MONGODB_PASS="pass"
+    volumes:
+      - ./mongo/data:/mongo/data
+    ports:
+      - 27017:27017
+    networks:
+      - project
+
